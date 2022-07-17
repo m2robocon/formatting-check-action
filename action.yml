@@ -1,0 +1,31 @@
+name: "Formatting check"
+description: "Checks whether the code is formatted according to project guidelines."
+
+inputs:
+  clang-format-version:
+    description: 'Version of clang-format that you want to use.'
+    required: false
+    default: '13'
+  clang-format-check-path:
+    description: 'The path to the directory you want to check for correct C/C++/Protobuf formatting. Default is the full repository.'
+    required: false
+    default: '.'
+  clang-format-exclude-regex:
+    description: 'A regex to exclude files or directories that should not be checked. Default is empty.'
+    required: false
+    default: ''
+  clang-format-fallback-style:
+    description: 'The fallback style for clang-format if no .clang-format file exists in your repository.'
+    required: false
+    default: 'llvm'
+
+runs:
+  using: "composite"
+  steps:
+    - name: Run clang-format style check for C/C++ programs.
+      uses: jidicula/clang-format-action@v4.6.2
+      with:
+        clang-format-version: ${{ inputs.clang-format-version }}
+        check-path: ${{ inputs.clang-format-check-path }}
+        exclude-regex: ${{ inputs.clang-format-exclude-regex }}
+        fallback-style: ${{ inputs.clang-format-fallback-style }}
