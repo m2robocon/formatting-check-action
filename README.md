@@ -46,3 +46,6 @@ jobs:
   - Optional. Specifies what Regex pattern to exclude formatting check.
 - `clang-format-fallback-style`
   - Optional. Specifies what fallback style to use if there is no `.clang-format` file.
+
+## License
+Licensed under the Apache 2.0 License.
