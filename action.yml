@@ -23,7 +23,7 @@ runs:
   using: "composite"
   steps:
     - name: Run clang-format style check for C/C++ programs.
-      uses: jidicula/clang-format-action@v4.6.2
+      uses: m2robocon/clang-format-action@v4.6.2
       with:
         clang-format-version: ${{ inputs.clang-format-version }}
         check-path: ${{ inputs.clang-format-check-path }}
