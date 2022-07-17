@@ -48,4 +48,4 @@ jobs:
   - Optional. Specifies what fallback style to use if there is no `.clang-format` file.
 
 ## License
-Licensed under the Apache 2.0 License.
+Licensed under the MIT License.
